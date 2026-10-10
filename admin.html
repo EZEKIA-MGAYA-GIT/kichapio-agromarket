@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Kichapio AgroMarket</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <div class="logo">⚙️ Admin Panel - Kichapio AgroMarket</div>
+        <div class="user-info">
+            <span id="adminNameDisplay">Karibu, Admin</span>
+            <button onclick="logout()" class="btn-logout">Orodoka (Logout)</button>
+        </div>
+    </header>
+
+    <div class="admin-container">
+
+        <!-- METRICS / TAKWIMU -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3 id="totalUsersCount">0</h3>
+                <p>Jumla ya Members</p>
+            </div>
+            <div class="stat-card farmer-card">
+                <h3 id="totalFarmersCount">0</h3>
+                <p>Wakulima Waliojisajili</p>
+            </div>
+            <div class="stat-card trader-card">
+                <h3 id="totalTradersCount">0</h3>
+                <p>Wafanyabiashara Waliojisajili</p>
+            </div>
+        </section>
+
+        <!-- SEHEMU YA KUTUMA UJUMBE NA UPDATE BEI ZA MAZAO -->
+        <section class="actions-grid">
+            
+            <!-- FORM YA KUTUMA UJUMBE -->
+            <div class="card">
+                <h2>📢 Tuma Ujumbe kwa Members Wote</h2>
+                <form onsubmit="postAnnouncement(event)">
+                    <div class="form-group">
+                        <label>Kichwa cha Ujumbe</label>
+                        <input type="text" id="msgTitle" placeholder="Mfano: Mabadiliko ya Bei za Mazao" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Maudhui ya Ujumbe</label>
+                        <textarea id="msgBody" rows="4" placeholder="Andika ujumbe wako hapa..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Tuma Ujumbe</button>
+                </form>
+            </div>
+
+            <!-- FORM YA UPDATE BEI ZA MAZAO -->
+            <div class="card">
+                <h2>🌾 Sasisha / Ongeza Bei za Mazao Sokoni</h2>
+                <form onsubmit="updateCropPrice(event)">
+                    <div class="form-group">
+                        <label>Jina la Zao</label>
+                        <input type="text" id="cropName" placeholder="Mfano: Mahindi" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mkoa / Soko</label>
+                        <input type="text" id="cropLocation" placeholder="Mfano: Morogoro" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Bei kwa Kg (TZS)</label>
+                        <input type="number" id="cropPrice" placeholder="Mfano: 1200" required>
+                    </div>
+                    <button type="submit" class="btn-success">Hifadhi Bei Mpya</button>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- ORODHA YA BEI ZA MAZAO YALIYOPO -->
+        <section class="card table-section">
+            <h2>📊 Bei za Mazao Zilizopo Sokoni</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zao</th>
+                            <th>Mahali</th>
+                            <th>Bei kwa Kg (TZS)</th>
+                            <th>Muda wa Mabadiliko</th>
+                            <th>Kitendo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pricesTableBody">
+                        <!-- Dynamic content -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ORODHA YA MEMBERS WALIOJISAJILI -->
+        <section class="card table-section">
+            <h2>👥 Orodha ya Members Waliojisajili</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Majina Matatu</th>
+                            <th>NIDA</th>
+                            <th>Mawasiliano (Email/Simu)</th>
+                            <th>Mahali</th>
+                            <th>Aina ya Akaunti</th>
+                            <th>Kitendo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- Dynamic content -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+   <script src="admin.js"></script>
+</body>
+</html>

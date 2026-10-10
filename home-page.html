@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mazao ya chakula</title>
+    <link rel="stylesheet" href="home-page.css">
+
+</head>
+<body>
+    <header>MAZAO YA CHAKULA</header>
+    <div class="Home">
+        <div class="SPIN">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="humbalger">
+        <nav class="nav_bar">
+            <a href="--">Home</a>
+            <a href="--">Utangulizi</a>
+            <a href="--">wasiliana</a>
+            <a href="--">taarifa zaidi</a>
+        </nav>
+        </div>
+        
+        <h1>KARIBU KWENYE TOVUTI YA MAZAO YA CHAKULA</h1>
+        <p>tunaji husisha na uuzaji, ununuaji, na usafirishaji wa mazao ya chakula </p>
+        <p>hudama yetu inapatikana nchi nzima, na hudama zetu zinafanywa ndani ya masaa ishirini na nne</p>
+    </div>
+    <div class="kuhusu_sisi">
+        <h2>taarifa na huduma kuhusu mkulima, mnunuzi na mchukuzi</h2>
+        <div class="mkulima">
+            <audio id="audiezz" src="Rose Muhando – Papa Lai ft. Neema Koyiaki.mp3" ></audio>
+            <button class="jisajili" onclick="playAudio()" > mkulima</button>
+            <button class="login" id="ezz">login mkulima</button>
+            <button class="request" id="eli">request mkulima</button>
+        </div>
+        <div class="mnunuzi">
+            <button class="jisajili">jisajili mnunuzi</button>
+            <button class="login">login</button>
+            <button class="request">make order mnunuzi</button>
+        </div>
+        <div class="mchukuzi">
+            <button  class="jisajili">jisajili mchukuzi</button>
+            <button class="login">login mchukuzi</button>
+            <button class="request">see an order</button>
+        </div>
+    </div>
+    <script>
+        function playAudio(){
+            var audio=documen.getElementById("audiezz");
+            if(audio.paused){
+                audio.play();
+            }
+            else{
+                audio.pause();
+            }
+        }
+    </script><script src="ezz.js"></script>
+</body>
+</html>

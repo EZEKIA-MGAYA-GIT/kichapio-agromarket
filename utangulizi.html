@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utangulizi - Kichapio AgroMarket</title>
+    <link rel="stylesheet" href="utangulizi.css">
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <div class="logo">🌾 Kichapio AgroMarket</div>
+        <div class="auth-buttons">
+            <button type="button" onclick="openModal('loginModal')" class="btn-secondary">Ingia (Login)</button>
+            <button type="button" onclick="openModal('registerModal')" class="btn-primary">Jisajili (Register)</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION / UTANGULIZI MFUPI -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Karibu Kichapio AgroMarket</h1>
+            <p>
+                Platform ya kisasa inayowaunganisha Wakulima na Wafanyabiashara wa mazao Tanzania. 
+                Pata taarifa za bei za mazao kwa wakati, weka oda, au kagua mahitaji ya wanunuzi 
+                kwa urahisi na haraka bila kupitia madalali.
+            </p>
+            <div class="hero-btns">
+                <button type="button" onclick="openModal('registerModal')" class="btn-primary-large">Anza Sasa - Jisajili</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL YA KUJISAJILI -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Fomu ya Usajili</h2>
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label for="regFullName">Majina Matatu (Full Name)</label>
+                    <input type="text" id="regFullName" placeholder="Mfano: Juma Ali Hassan" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regContact">Barua Pepe (Email) / Namba ya Simu</label>
+                    <input type="text" id="regContact" placeholder="email@mfano.com au 07XXXXXXXX" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regNida">Namba ya NIDA</label>
+                    <input type="text" id="regNida" placeholder="Namba yako ya kitambulisho" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regLocation">Mahali Unapopatikana (Mkoa / Wilaya)</label>
+                    <input type="text" id="regLocation" placeholder="Mfano: Morogoro, Kilosa" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regRole">Aina ya Akaunti</label>
+                    <select id="regRole" required>
+                        <option value="">-- Chagua Aina ya Akaunti --</option>
+                        <option value="mkulima">Mkulima</option>
+                        <option value="mfanyabiashara">Mfanyabiashara</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="regPassword">Nenosiri (Password)</label>
+                    <input type="password" id="regPassword" placeholder="Lazima iwe na herufi, namba na alama" required>
+                    <small class="hint">Lazima iwe na herufi, namba, na alama maalumu (mfano: @, #, $).</small>
+                </div>
+
+                <button type="submit" class="btn-submit">Sajili Akaunti</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL YA KUINGIA (LOGIN) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Ingia Kwenye Mfumo</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginUser">Username / Email / Namba ya Simu</label>
+                    <input type="text" id="loginUser" placeholder="Weka Email au Namba ya simu" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Nenosiri (Password)</label>
+                    <input type="password" id="loginPassword" placeholder="Weka password yako" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginRole">Ingia Kama:</label>
+                    <select id="loginRole" required>
+                        <option value="">-- Chagua Aina ya Mtumiaji --</option>
+                        <option value="admin">Admin</option>
+                        <option value="mkulima">Mkulima</option>
+                        <option value="mfanyabiashara">Mfanyabiashara</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Ingia</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Kichapio AgroMarket. Haki zote zimehifadhiwa.</p>
+    </footer>
+
+    <script src="utangulizi.js"></script>
+</body>
+</html>

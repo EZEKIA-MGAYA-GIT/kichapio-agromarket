@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard ya Mfanyabiashara - Kichapio AgroMarket</title>
+    <link rel="stylesheet" href="mfanyabiashara.css">
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <div class="logo">👨‍💼 Mfanyabiashara Panel - Kichapio AgroMarket</div>
+        <div class="user-info">
+            <span id="traderNameDisplay">Karibu, Mfanyabiashara</span>
+            <button onclick="logout()" class="btn-logout">Orodoka (Logout)</button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- UJUMBE / MATANGAZO KUTOKA KWA ADMIN -->
+        <section class="card announcement-section">
+            <h2>📢 Ujumbe & Matangazo Kutoka kwa Admin</h2>
+            <div id="announcementsList">
+                <p>Hakuna ujumbe mpya kutoka kwa Admin.</p>
+            </div>
+        </section>
+
+        <section class="grid-layout">
+            
+            <!-- FORM YA KUWEKA ODA MPYA YA ZAO -->
+            <div class="card">
+                <h2>🛒 Weka Oda ya Zao Unalohitaji Kuweka Sokoni</h2>
+                <form onsubmit="createOrder(event)">
+                    <div class="form-group">
+                        <label>Jina la Zao Unalotafuta</label>
+                        <input type="text" id="orderCropName" placeholder="Mfano: Mahindi, Mpunga, Maharage..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kiasi Unachohitaji (Kg)</label>
+                        <input type="number" id="orderQuantity" placeholder="Mfano: 1000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bei Unayotoa kwa Kg (TZS)</label>
+                        <input type="number" id="orderPrice" placeholder="Mfano: 1300" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mkoa / Eneo la Kuchukulia Mzigo</label>
+                        <input type="text" id="orderLocation" placeholder="Mfano: Dar es Salaam, Ilala" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Tuma Oda Sokoni</button>
+                </form>
+            </div>
+
+            <!-- BEI ZILIZOPO SOKONI -->
+            <div class="card">
+                <h2>📊 Bei za Mazao Zilizopo Sokoni</h2>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Zao</th>
+                                <th>Mahali</th>
+                                <th>Bei kwa Kg (TZS)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="marketPricesBody">
+                            <!-- Dynamic market prices -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MAOMBI YA WAKULIMA WALIOOMBA KUMUUZIA (REQUESTS KAMA BOLT) -->
+        <section class="card">
+            <h2>🚗 Maombi Kutoka kwa Wakulima (Farmer Requests)</h2>
+            <p class="subtitle">Hawa ni wakulima waliobonyeza Request kulingana na Oda zako zilizopo sokoni:</p>
+            
+            <div id="farmerRequestsContainer" class="requests-grid">
+                <!-- Dynamic Farmer Requests -->
+            </div>
+        </section>
+
+        <!-- ORODHA YA ODA ZANGU ZILIZOPO SOKONI -->
+        <section class="card">
+            <h2>📦 Oda Zako Zilizopo Sokoni</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Oda ID</th>
+                            <th>Zao</th>
+                            <th>Kiasi (Kg)</th>
+                            <th>Bei kwa Kg (TZS)</th>
+                            <th>Mahali</th>
+                            <th>Kitendo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myOrdersTableBody">
+                        <!-- Dynamic trader orders -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+   <script src="mfanyabiashara.js"></script>
+</body>
+</html>

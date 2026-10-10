@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard ya Mkulima - Kichapio AgroMarket</title>
+    <link rel="stylesheet" href="mkulima.css">
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <div class="logo">👨‍🌾 Mkulima Panel - Kichapio AgroMarket</div>
+        <div class="user-info">
+            <span id="farmerNameDisplay">Karibu, Mkulima</span>
+            <button onclick="logout()" class="btn-logout">Orodoka (Logout)</button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- UJUMBE / MATANGAZO KUTOKA KWA ADMIN -->
+        <section class="card announcement-section">
+            <h2>📢 Ujumbe & Matangazo Kutoka kwa Admin</h2>
+            <div id="announcementsList">
+                <p>Hakuna ujumbe mpya kutoka kwa Admin.</p>
+            </div>
+        </section>
+
+        <!-- BEI ZILIZOPO SOKONI -->
+        <section class="card">
+            <h2>📊 Bei za Mazao Sokoni (Sasa)</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zao</th>
+                            <th>Mkoa / Mahali</th>
+                            <th>Bei kwa Kg (TZS)</th>
+                            <th>Tarehe ya Mabadiliko</th>
+                        </tr>
+                    </thead>
+                    <tbody id="marketPricesBody">
+                        <!-- Dynamic prices -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- WAFANYABIASHARA WANAOTAFUTA MAZAO (ORDERS / REQUESTS) -->
+        <section class="card">
+            <h2>🛒 Wafanyabiashara Wanaotafuta Mazao (Wanunuzi)</h2>
+            <p class="subtitle">Chagua mfanyabiashara na utume ombi (Request) ya kumulizia au kumulizia mzigo wako:</p>
+            
+            <div id="traderOrdersContainer" class="traders-grid">
+                <!-- Dynamic Trader Demands -->
+            </div>
+        </section>
+
+    </div>
+
+   <script src="mkulima.js"></script>
+</body>
+</html>

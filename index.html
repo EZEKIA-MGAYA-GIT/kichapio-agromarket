@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kichapio AgroMarket Tanzania</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                🌾 Kichapio AgroMarket
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Mazao</a></li>
+                <li><a href="#prices">Bei</a></li>
+                <li><a href="#advertisements">Matangazo</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <button onclick="showLogin()">Login</button>
+                <button onclick="showRegister()">Register</button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ================= DASHBOARD SECTION (Mkulima, Trader, Admin) ================= -->
+    <section id="dashboardSection" class="section dashboard-section" style="display: none;">
+        <div id="dashboardContent" class="dashboard-card"></div>
+    </section>
+
+
+    <!-- ================= HOME / HERO ================= -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Karibu Kichapio AgroMarket Tanzania</h1>
+            <p>
+                Platform inayowaunganisha wakulima na wafanyabiashara 
+                kwa ajili ya kuuza na kununua mazao kwa urahisi na haraka.
+            </p>
+            <button class="main-btn" onclick="scrollToProducts()">
+                Angalia Mazao
+            </button>
+        </div>
+    </section>
+
+
+    <!-- ================= SEARCH ================= -->
+    <section class="search-section">
+        <h2>Tafuta Mazao Sokoni</h2>
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Mfano: Mahindi, Mpunga, Maharage..." 
+            onkeyup="searchProducts()"
+        >
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+    <section id="products" class="section">
+        <h2 class="section-title">Mazao Yanayopatikana Sokoni</h2>
+        <div id="productContainer" class="product-container">
+            <!-- Dynamic products zitaingia hapa kutoka Database -->
+        </div>
+    </section>
+
+
+    <!-- ================= PRICE SECTION ================= -->
+    <section id="prices" class="section price-section">
+        <h2 class="section-title">Bei za Mazao</h2>
+        <p class="update">Bei hizi zinaweza kubadilika kulingana na msimu na soko.</p>
+
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Zao</th>
+                        <th>Mahali</th>
+                        <th>Bei kwa Kg</th>
+                        <th>Tarehe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mahindi</td>
+                        <td>Morogoro</td>
+                        <td>TZS 1,200</td>
+                        <td>08/10/2026</td>
+                    </tr>
+                    <tr>
+                        <td>Mpunga</td>
+                        <td>Mbeya</td>
+                        <td>TZS 2,000</td>
+                        <td>08/10/2026</td>
+                    </tr>
+                    <tr>
+                        <td>Maharage</td>
+                        <td>Iringa</td>
+                        <td>TZS 2,500</td>
+                        <td>08/10/2026</td>
+                    </tr>
+                    <tr>
+                        <td>Viazi</td>
+                        <td>Arusha</td>
+                        <td>TZS 1,500</td>
+                        <td>08/10/2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <!-- ================= ADVERTISEMENTS ================= -->
+    <section id="advertisements" class="section">
+        <h2 class="section-title">Matangazo ya Mazao</h2>
+
+        <div class="advertisement-container">
+            <div class="advertisement">
+                <h3>🌽 Mahindi Yanauzwa</h3>
+                <p>Mahindi bora yanapatikana Morogoro. Kiasi kikubwa kinapatikana kwa bei ya jumla.</p>
+                <button onclick="showMessage()">Angalia Tangazo</button>
+            </div>
+
+            <div class="advertisement">
+                <h3>🍚 Mpunga Bora wa Mbeya</h3>
+                <p>Mpunga wa ubora wa juu unapatikana Mbeya kwa bei iliyopunguzwa.</p>
+                <button onclick="showMessage()">Angalia Tangazo</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= USER TYPES ================= -->
+    <section class="section">
+        <h2 class="section-title">Jiunge na AgroMarket</h2>
+
+        <div class="user-types">
+            <div class="user-card">
+                <h3>👨‍🌾 Mkulima</h3>
+                <p>Weka mazao yako na uwafikie wafanyabiashara moja kwa moja.</p>
+                <button onclick="showRegister()">Register as Farmer</button>
+            </div>
+
+            <div class="user-card">
+                <h3>👨‍💼 Mfanyabiashara</h3>
+                <p>Tafuta mazao na fanya oda kwa wakulima kwa urahisi.</p>
+                <button onclick="showRegister()">Register as Trader</button>
+            </div>
+
+            <div class="user-card">
+                <h3>⚙️ Admin</h3>
+                <p>Simamia wateja, mazao, oda na matangazo ya mfumo.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section about">
+        <h2>About AgroMarket</h2>
+        <p>
+            AgroMarket ni mfumo wa kidigitali unaolenga kuwaunganisha wakulima na wafanyabiashara 
+            katika biashara ya mazao nchini Tanzania.
+        </p>
+    </section>
+
+
+    <!-- ================= LOGIN MODAL ================= -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Ingia (Login)</h2>
+
+            <form onsubmit="login(event)">
+                <input type="email" id="loginEmail" placeholder="Barua Pepe (Email)" required>
+                <input type="password" id="loginPassword" placeholder="Nenosiri (Password)" required>
+                <select id="loginRole" required>
+                    <option value="farmer">Farmer (Mkulima)</option>
+                    <option value="trader">Trader (Mfanyabiashara)</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button type="submit">Ingia</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ================= REGISTER MODAL ================= -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <h2>Tengeneza Akaunti</h2>
+
+            <form onsubmit="register(event)">
+                <input type="text" id="registerName" placeholder="Jina Bufuli (Full Name)" required>
+                <input type="email" id="registerEmail" placeholder="Barua Pepe (Email)" required>
+                <input type="password" id="registerPassword" placeholder="Nenosiri (Password)" required>
+                <select id="registerRole" required>
+                    <option value="">Chagua Aina ya Akaunti</option>
+                    <option value="farmer">Farmer (Mkulima)</option>
+                    <option value="trader">Trader (Mfanyabiashara)</option>
+                </select>
+                <button type="submit">Jisajili</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>© 2026 AgroMarket Tanzania. Haki Zote Zimehifadhiwa.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
